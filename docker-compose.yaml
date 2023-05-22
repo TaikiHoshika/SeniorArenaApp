@@ -2,10 +2,20 @@ version: "3"
 services:
   node:
     container_name: node_express
-    build: ./app
+    build: ./backend
     volumes:
-      - ./app:/app
-      - /app/node_modules
+      - ./backend:/backend
+      - /backend/node_modules
+    tty:  true
+    ports:
+      - 3030:3030
+  
+  react:
+    container_name: react_app
+    build: ./frontend
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
     tty:  true
     ports:
       - 3000:3000
