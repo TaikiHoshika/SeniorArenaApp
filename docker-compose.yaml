@@ -1,7 +1,8 @@
 version: "3"
 services:
   django:
-    container_name: django_backend
+    container_name: django
+    hostname: django
     build: ./backend
     tty:  true
     volumes:
@@ -12,7 +13,8 @@ services:
 #      - postgres
   
   react:
-    container_name: react_frontend
+    container_name: react
+    hostname: react
     build: ./frontend
     tty:  true
     volumes:
