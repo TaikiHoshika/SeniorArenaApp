@@ -8,8 +8,8 @@ services:
       - ./backend:/backend
     ports:
       - 3030:3030
-    depends_on:
-      - postgres
+#    depends_on:
+#      - postgres
   
   react:
     container_name: react_frontend
@@ -21,17 +21,18 @@ services:
     ports:
       - 3000:3000
 
-  postgres:
-    container_name: postgres
-    image: postgres:13
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres_db
-    volumes:
-      - db_data:/var/lib/posrgresql/data
 
-volumes:
-  db_data: {}
+#  postgres:
+#    container_name: postgres
+#    image: postgres:13
+#    ports:
+#      - 5432:5432
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: password
+#      POSTGRES_DB: postgres_db
+#    volumes:
+#      - db_data:/var/lib/posrgresql/data
+
+#volumes:
+#  db_data: {}

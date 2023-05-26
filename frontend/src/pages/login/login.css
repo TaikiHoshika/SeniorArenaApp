@@ -14,13 +14,9 @@
 }
 
 .login {
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    width: 450px;
-    height: 290px;
-
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .content-box {
@@ -28,6 +24,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.login-frame {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 450px;
+    height: 290px;
+
+    display: grid;
+    place-items: center;
 }
 
 .textfield {
@@ -54,4 +60,8 @@
 .login-button {
     margin-left: auto;
     margin-right: 25px;
+}
+
+.errorMargin {
+    margin-top: 20px;
 }
