@@ -1,23 +1,22 @@
 version: "3"
 services:
-  django:
-    container_name: django_backend
+  node:
+    container_name: node_express
     build: ./backend
-    tty:  true
     volumes:
       - ./backend:/backend
+      - /backend/node_modules
+    tty:  true
     ports:
       - 3030:3030
-    depends_on:
-      - postgres
   
   react:
-    container_name: react_frontend
+    container_name: react_app
     build: ./frontend
-    tty:  true
     volumes:
       - ./frontend:/frontend
       - /frontend/node_modules
+    tty:  true
     ports:
       - 3000:3000
 
@@ -32,6 +31,23 @@ services:
       POSTGRES_DB: postgres_db
     volumes:
       - db_data:/var/lib/posrgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      TZ: Asia/Tokyo
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
 
 volumes:
   db_data: {}
+  pgadmin_data: {}
