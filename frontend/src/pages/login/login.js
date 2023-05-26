@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import TextField from '@mui/material/TextField';
@@ -11,11 +12,12 @@ import Collapse from '@mui/material/Collapse';
 import './login.css';
 
 const Login = () => {
-    const [userId, setUserId] = useState("");
+    const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
     const [error, setError] = useState(false);
 
+    const navigate = useNavigate();
     //const [Login, setLogin] = useState(false);
 
     const toggleRemember = () => {
@@ -23,16 +25,17 @@ const Login = () => {
     };
 
     const onLogin = async () => {
-        if(userId !== "" && password !== "" ) {
-            await fetch("http://localhost:3030/api/login/", {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "http://localhost:3030"
-                },
-                body: JSON.stringify({userId: "root", password: "P@ssw0rd"})
-              })
+        if(email !== "" && password !== "" ) {
+            const authStatus = await axios.post(
+                "http://localhost:3030/api/login/",
+                {email: email, password: password}
+            );
+            const data = JSON.parse(JSON.stringify(authStatus.data));
+            if(data["isAuthenticated"]) {
+                navigate("/dashboard");
+            } else {
+                setError(true);
+            }
         } else {
             setError(true);
         }
@@ -46,11 +49,11 @@ const Login = () => {
                     <div className="login-frame">
                         <div className="textfield">
                             <TextField
-                                id="userId"
+                                id="email"
                                 type="email"
                                 label="Username"
                                 placeholder="Username"
-                                onChange={(e) => setUserId(e.target.value)}
+                                onChange={(e) => setemail(e.target.value)}
                                 margin="normal"
                             />
                             <TextField
@@ -85,7 +88,7 @@ const Login = () => {
                             severity="error"
                             onClose={() => {setError(false)}}
                         >
-                            Invalid Username of Password
+                            Invalid Username or Password
                         </Alert>
                     </Collapse>
                 </div>

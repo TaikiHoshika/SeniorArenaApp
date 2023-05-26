@@ -17,16 +17,15 @@ DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'django']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:3030',
-    'http://localhost:3030',
-    'http://django:3030',
+    'http://127.0.0.1:3000',
+    'http://localhost:3000',
 ]
 
 # Application definition
 
 INSTALLED_APPS = [
+    'api',
     'backend',
-    'rest_framework',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',

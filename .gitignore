@@ -4,6 +4,7 @@ frontend/node_modules/
 *.alt/
 *.alt
 
-backend/app/__pycache__/
-backend/app/migtations/
-backend/seniorarena/__pycache__/
+backend/api/__pycache__/
+backend/api/views/__pycache__/
+backend/api/migtations/
+backend/backend/__pycache__/

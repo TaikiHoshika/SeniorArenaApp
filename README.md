@@ -18,6 +18,14 @@ git clone https://github.com/TaikiHoshika/SeniorArenaApp.git
 docker compose up -d
 ```
 
+3. マイグレーションの実行・ダミーデータの読み込み
+```sh
+docker exec -it django bash
+python manage.py makemigrations api
+python manage.py migrate api
+python manage.py loaddata ./api/fixtures/shops_init.json
+```
+
 ## 作成者
 - 星加大樹
 - 大成輝
