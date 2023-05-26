@@ -2,8 +2,8 @@
 学校で開催されたハッカソン用のアプリデモ
 
 ## 技術スタック
-- バックエンド: Express.js
-- フロントエンド: React.js
+- バックエンド: Django
+- フロントエンド: React
 - データベース: PostgreSQL
 - コンテナ: Docker
 
@@ -23,4 +23,4 @@ docker compose up -d
 - 大成輝
 
 ## ライセンス
-[MIT license](https://en.wikipedia.org/wiki/MIT_License)
+[BSD license](https://ja.wikipedia.org/wiki/BSDライセンス)
