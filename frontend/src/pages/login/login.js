@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 
 import TextField from '@mui/material/TextField';
@@ -12,13 +13,18 @@ import Collapse from '@mui/material/Collapse';
 import './login.css';
 
 const Login = () => {
+
+    useEffect(() => {
+        checkSession();
+    }, []);
+
     const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
     const [remember, setRemember] = useState(false);
     const [error, setError] = useState(false);
 
+    const [cookies, setCookie, removeCookie] = useCookies(["token"]);
     const navigate = useNavigate();
-    //const [Login, setLogin] = useState(false);
 
     const toggleRemember = () => {
         setRemember(!remember);
@@ -27,11 +33,12 @@ const Login = () => {
     const onLogin = async () => {
         if(email !== "" && password !== "" ) {
             const authStatus = await axios.post(
-                "http://localhost:3030/api/login/",
+                "http://localhost:3030/api/auth/login/",
                 {email: email, password: password}
             );
             const data = JSON.parse(JSON.stringify(authStatus.data));
             if(data["isAuthenticated"]) {
+                setCookie("token", data["token"])
                 navigate("/dashboard");
             } else {
                 setError(true);
@@ -40,6 +47,18 @@ const Login = () => {
             setError(true);
         }
     };
+
+    const checkSession = async () => {
+        const token = cookies.token
+        const authStatus = await axios.post(
+            "http://localhost:3030/api/auth/token/",
+            {token: token}
+        );
+        const data = JSON.parse(JSON.stringify(authStatus.data));
+        if(data["isAuthenticated"]) {
+            navigate("/dashboard");
+        }
+    }
 
     return (
         <div className="background">

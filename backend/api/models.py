@@ -16,7 +16,7 @@ class Users(models.Model):
     name = models.CharField(max_length=255)
     age = models.IntegerField()
     email = models.CharField(max_length=255, unique=True)
-    shop_id = models.ForeignKey(Shops, to_field="id", on_delete=models.CASCADE)
+    shop = models.ForeignKey(Shops, to_field="id", on_delete=models.CASCADE)
     password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -25,5 +25,14 @@ class Balances(models.Model):
     class Meta:
         db_table = "balances"
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(Users, to_field="id", on_delete=models.CASCADE)
+    user = models.ForeignKey(Users, to_field="id", on_delete=models.CASCADE)
     balance = models.BigIntegerField(default=0, blank=True, null=True)
+
+class Sessions(models.Model):
+    class Meta:
+        db_table = "sessions"
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(Users, to_field="id", on_delete=models.CASCADE)
+    session = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

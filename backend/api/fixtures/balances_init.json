@@ -1,0 +1,10 @@
+[
+    {
+        "model": "api.balances",
+        "pk": 1,
+        "fields": {
+            "balance": 5000000000000000,
+            "user": 1
+        }
+    }
+]
