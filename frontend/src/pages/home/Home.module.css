@@ -1,0 +1,40 @@
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.background {
+    background-color: rgb(235, 235, 235);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.main {
+    background: #ffffff;
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.button_icon > span {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}

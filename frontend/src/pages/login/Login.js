@@ -10,7 +10,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 
-import './login.css';
+import './Login.module.css';
 
 const Login = () => {
 
