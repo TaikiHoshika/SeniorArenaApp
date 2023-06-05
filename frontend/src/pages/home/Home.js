@@ -1,30 +1,16 @@
-import iconHome from "../../components/icons/svg/iconHome.svg";
-import iconSchedule from "../../components/icons/svg/iconSchedule.svg";
-import iconHistory from "../../components/icons/svg/iconHistory.svg";
-import iconUser from "../../components/icons/svg/iconUser.svg";
-
+import iconToken from "../../components/icons/svg/iconToken.svg";
 import style from "./Home.module.css";
 
 const Home = () => {
     return (
-        <div className={style.background}>
-            <div className={style.main}></div>
-            <div className={style.buttons}>
-                <div className={style.button_icon}>
-                    <img src={iconHome} alt="icon"/>
-                    <span>ホーム</span>
-                </div>
-                <div className={style.button_icon}>
-                    <img src={iconSchedule} alt="icon"/>
-                    <span>予約</span>
-                </div>
-                <div className={style.button_icon}>
-                    <img src={iconHistory} alt="icon"/>
-                    <span>来店履歴</span>
-                </div>
-                <div className={style.button_icon}>
-                    <img src={iconUser} alt="icon"/>
-                    <span>会員証</span>
+        <div className={style.main}>
+            <div className={style.point}>
+                <div className={style.point_balance}>
+                    <span className={style.point_balance_tag}>残高</span>
+                    <div className={style.point_balance_value}>
+                        <span>1,532,017</span>
+                        <img src={iconToken} alt="icon"/>
+                    </div>
                 </div>
             </div>
         </div>
