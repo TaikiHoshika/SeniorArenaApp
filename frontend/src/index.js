@@ -23,7 +23,10 @@ root.render(
                         <Route index element={<Dashboard />} />
                         <Route path="home" element={<Home />} />
                         <Route path="reserve" element={<Reserve />} />
+                        <Route path="history" element={<h1>りれき</h1>} />
+                        <Route path="profile" element={<h1>ぷろふぃーる</h1>} />
                     </Route>
+                    <Route path="*" element={<h1>Page Not Found</h1>} />
                 </Routes>
             </BrowserRouter>
         </CookiesProvider>
