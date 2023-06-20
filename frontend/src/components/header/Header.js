@@ -1,5 +1,5 @@
-import iconNotification from "../../components/icons/svg/iconNotification.svg";
-import iconMenu from "../../components/icons/svg/iconMenu.svg";
+import iconNotification from "../../components/icons/header/iconNotification.svg";
+import iconMenu from "../../components/icons/header/iconMenu.svg";
 
 import style from "./Header.module.css";
 
