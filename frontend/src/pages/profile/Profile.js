@@ -2,10 +2,10 @@ import style from "./Profile.module.css";
 
 import qr from "./qr_example.png"
 
-import UserProfile from '@mui/icons-material/Person';
-import Settings from '@mui/icons-material/Settings';
-import Coupons from '@mui/icons-material/ConfirmationNumber';
-import Help from '@mui/icons-material/Help';
+import UserProfile from "@mui/icons-material/Person";
+import Settings from "@mui/icons-material/Settings";
+import Coupons from "@mui/icons-material/ConfirmationNumber";
+import Help from "@mui/icons-material/Help";
 
 const Profile = () => {
     return (
@@ -20,7 +20,7 @@ const Profile = () => {
             </div>
             <span id={style.hr} />
             <div className={style.card}>
-                <img src={qr} />
+                <img src={qr} alt="" />
             </div>
             <span id={style.hr} />
             <div className={style.settings}>

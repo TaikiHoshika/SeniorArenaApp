@@ -1,0 +1,16 @@
+[
+    {
+        "model": "api.MachineTypes",
+        "pk": 1,
+        "fields": {
+            "name": "ランニングマシン"
+        }
+    },
+    {
+        "model": "api.MachineTypes",
+        "pk": 2,
+        "fields": {
+            "name": "ヨガ"
+        }
+    }
+]

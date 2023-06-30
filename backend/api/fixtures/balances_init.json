@@ -1,6 +1,6 @@
 [
     {
-        "model": "api.balances",
+        "model": "api.Balances",
         "pk": 1,
         "fields": {
             "balance": 5000000000000000,

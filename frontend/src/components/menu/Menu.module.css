@@ -2,27 +2,33 @@
     display: flex;
     justify-content: center;
     background-color: rgb(235, 235, 235);
+
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .button_menu {
+    width: 25%;
+    height: 20vh;
+
+}
+
+.button_menu > a > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    margin-left: 20px;
-    margin-right: 20px;
+    justify-content: center;
+
     margin-top: 20px;
-    margin-bottom: 50px;
 }
 
-.button_menu > span {
+.button_menu span {
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
 }
 
-.button_menu > img {
+.button_menu img {
     width: 30px;
     height: 30px;
 }

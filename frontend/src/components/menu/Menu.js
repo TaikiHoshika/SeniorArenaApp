@@ -9,30 +9,38 @@ import style from "./Menu.module.css";
 const Menu = () => {
     return (
         <div className={style.buttons_menu}>
-            <NavLink to="/home">
-                <div className={style.button_menu}>
-                    <img src={iconHome} alt="icon"/>
-                    <span>ホーム</span>
-                </div>
-            </NavLink>
-            <NavLink to="/health">
-                <div className={style.button_menu}>
-                    <img src={iconHealth} alt="icon"/>
-                    <span>ダッシュボード</span>
-                </div>
-            </NavLink>
-            <NavLink to="/history">
-                <div className={style.button_menu}>
-                    <img src={iconHistory} alt="icon"/>
-                    <span>運動履歴</span>
-                </div>
-            </NavLink>
-            <NavLink to="/profile">
-                <div className={style.button_menu}>
-                    <img src={iconUser} alt="icon"/>
-                    <span>会員証</span>
-                </div>
-            </NavLink>
+            <div className={style.button_menu}>
+                <NavLink to="/home">
+                    <div>
+                        <img src={iconHome} alt="icon"/>
+                        <span>ホーム</span>
+                    </div>
+                </NavLink>
+            </div>
+            <div className={style.button_menu}>
+                <NavLink to="/health">
+                    <div>
+                        <img src={iconHealth} alt="icon"/>
+                        <span>統計</span>
+                    </div>
+                </NavLink>
+            </div>
+            <div className={style.button_menu}>
+                <NavLink to="/history">
+                    <div>
+                        <img src={iconHistory} alt="icon"/>
+                        <span>運動履歴</span>
+                    </div>
+                </NavLink>
+            </div>
+            <div className={style.button_menu}>
+                <NavLink to="/profile">
+                    <div>
+                        <img src={iconUser} alt="icon"/>
+                        <span>会員証</span>
+                    </div>
+                </NavLink>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 [
     {
-        "model": "api.users",
+        "model": "api.Users",
         "pk": 1,
         "fields": {
             "name": "山田太郎",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "model": "api.users",
+        "model": "api.Users",
         "pk": 2,
         "fields": {
             "name": "郎太田山",

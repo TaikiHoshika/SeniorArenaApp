@@ -1,6 +1,6 @@
 [
     {
-        "model": "api.shops",
+        "model": "api.Shops",
         "pk": 1,
         "fields": {
             "name": "福岡天神店",
@@ -10,7 +10,7 @@
         }
     },
     {
-        "model": "api.shops",
+        "model": "api.Shops",
         "pk": 2,
         "fields": {
             "name": "東京大久保店",
@@ -20,7 +20,7 @@
         }
     },
     {
-        "model": "api.shops",
+        "model": "api.Shops",
         "pk": 3,
         "fields": {
             "name": "愛知三の丸店",
@@ -30,7 +30,7 @@
         }
     },
     {
-        "model": "api.shops",
+        "model": "api.Shops",
         "pk": 4,
         "fields": {
             "name": "大阪梅田店",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "api.shops",
+        "model": "api.Shops",
         "pk": 5,
         "fields": {
             "name": "千葉富士見店",

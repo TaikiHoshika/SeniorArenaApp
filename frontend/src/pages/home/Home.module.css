@@ -1,44 +1,18 @@
-
 .main {
     background: #ffffff;
     display:flex;
     flex-direction: column;
     align-items: center;
-}
-
-.point {
-    background-color: rgb(235, 235, 235);
-    margin-top: 20px;
     padding: 20px;
-    width: 80%;
-    border-radius: 5px;
+}
 
+.buttonScanner {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(255, 166, 0);
+    border-radius: 50%;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    flex-direction: column;
-}
-
-.point_balance {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.point_balance > .point_balance_tag {
-    font-size: 20px;
-}
-
-.point_balance_value {
-    margin-left: auto;
-}
-
-.point_balance_value > span {
-    font-size: 35px;
-}
-
-.point_balance_value > img {
-    width: 30px;
-    height: 30px;
-    padding-left: 10px;
+    justify-content: center;
 }

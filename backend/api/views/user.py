@@ -6,7 +6,7 @@ import hashlib
 import logging
 
 from .auth import authUser
-from ..models import Users, Shops
+from ..models import Users, Shops, Balances
 
 logger = logging.getLogger(__name__)
 
