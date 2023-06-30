@@ -5,6 +5,8 @@
 //import Ball from "@mui/icons-material/SportsVolleyball";
 //import Casino from "@mui/icons-material/Casino";
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 import style from "./History.module.css";
 //import Detail from "./HistoryDetail"
 
@@ -13,21 +15,34 @@ import axios from "axios";
 
 const History = () => {
     const [query, setQuery] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getData = async () => {
-            const rawData = await axios.get(
+            await axios.get(
                 "https://jsonplaceholder.typicode.com/posts"
-            );
-            console.log(rawData.data);
-            setQuery(rawData.data);
+            ).then((response) => {
+                setQuery(response.data);
+                setLoading(false);
+            });
         };
         getData();
     });
 
     return (
         <div className={style.main}>
-            {query}
+            { loading ? (
+                <CircularProgress sx={{ color: "#FFA600"}} />
+            ) : (
+                query.map((data) => {
+                    return (
+                        <div>
+                            <p>{data.title}</p>
+                            <p>{data.body}</p>
+                        </div>
+                    );
+                })
+            )}
         </div>
     );
 }
