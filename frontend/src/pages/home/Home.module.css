@@ -1,0 +1,18 @@
+.main {
+    background: #ffffff;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.buttonScanner {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(255, 166, 0);
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

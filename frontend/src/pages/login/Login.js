@@ -1,3 +1,4 @@
+/*
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -10,7 +11,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 
-import './login.css';
+import './Login.module.css';
 
 const Login = () => {
 
@@ -117,3 +118,4 @@ const Login = () => {
 }
 
 export default Login;
+*/

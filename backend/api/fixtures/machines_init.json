@@ -1,0 +1,23 @@
+[
+    {
+        "model": "api.Machines",
+        "pk": 1,
+        "fields": {
+            "machine_type": 1
+        }
+    },
+    {
+        "model": "api.Machines",
+        "pk": 2,
+        "fields": {
+            "machine_type": 1
+        }
+    },
+    {
+        "model": "api.Machines",
+        "pk": 3,
+        "fields": {
+            "machine_type": 2
+        }
+    }
+]

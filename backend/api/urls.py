@@ -7,4 +7,9 @@ urlpatterns = [
 
     path('user/create/', user.createUser, name="user.create"),
     path('user/index/', user.indexUser, name="user.index"),
+
+    path('qr/scan/', exercise.scanQR, name="qr.scan"),
+
+    path('user/history/', exercise.getHistory, name="user.history"),
+    path('user/isExercising/', exercise.isExercising, name="user.isExercising"),
 ]
