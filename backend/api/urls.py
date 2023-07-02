@@ -11,4 +11,5 @@ urlpatterns = [
     path('qr/scan/', exercise.scanQR, name="qr.scan"),
 
     path('user/history/', exercise.getHistory, name="user.history"),
+    path('user/isExercising/', exercise.isExercising, name="user.isExercising"),
 ]

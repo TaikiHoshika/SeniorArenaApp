@@ -24,23 +24,23 @@ def scanQR(request):
                     user=user
                 )
 
-                return JsonResponse({"message": "create"})
+                return JsonResponse({"action": "create"})
 
             else:
                 startDate = usingMachine.first().started_at
                 endDate   = datetime.now(timezone.utc)
 
-                exerciseTime = str(endDate - startDate)
+                exerciseTime = endDate - startDate
 
                 ExerciseHistory.objects.create(
                     user=Users.objects.get(id=params["user"]),
                     machine_type=usingMachine.first().machine.machine_type,
-                    time=exerciseTime,
+                    time=str(exerciseTime.seconds),
                     point=100
                 )
 
                 usingMachine.first().delete()
-                return JsonResponse({"message": "update"})
+                return JsonResponse({"action": "update"})
 
         except Exception as e:
             logger.debug(e)
@@ -48,10 +48,25 @@ def scanQR(request):
     else:
         return  JsonResponse({"message": "やほ"})
 
+def isExercising(request):
+    if request.method == "GET":
+        try:
+            usingMachine = UsingMachines.objects.filter(user=1)
+            if usingMachine.first() is None:
+                return JsonResponse({"isExercising": False})
+            else:
+                return JsonResponse({"isExercising": True, "started_at": usingMachine.first().started_at})
+
+        except Exception as e:
+            logger.debug(e)
+            return JsonResponse({"isExercising": False})
+
+
+
 def getHistory(request):
     if request.method == "GET":
         try:
-            result = ExerciseHistory.objects.filter(user=Users.objects.get(id=1))
+            result = ExerciseHistory.objects.filter(user=Users.objects.get(id=1)).order_by("exercised_at").reverse()[:20]
             response = []
             for r in result:
                 response.append({
